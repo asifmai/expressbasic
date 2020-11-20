@@ -1,21 +1,29 @@
 {
-  "name": "expressbasic",
+  "name": "apek",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/expressbasic",
-    "dev": "nodemon ./bin/expressbasic",
+    "start": "node ./bin/apek",
+    "dev": "nodemon ./bin/apek",
     "ship": "git add .&&git commit -m 'update'&&git push"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.5",
     "debug": "~4.1.1",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
     "express": "~4.17.1",
+    "express-sanitizer": "^1.0.5",
+    "express-session": "^1.17.1",
     "http-errors": "~1.7.3",
     "mongoose": "^5.9.9",
     "morgan": "~1.10.0",
-    "pug": "2.0.4"
+    "nodemailer": "^6.4.16",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "uuid": "^8.3.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
