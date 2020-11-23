@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include ('partials/commonhead') %>
+    <%- include ('../partials/commonhead') %>
   </head>
   <body class="account-page">
     <div class="main-wrapper">
-      <%- include ('partials/homeheader') %>
+      <%- include ('../partials/homeheader') %>
       <div class="content">
         <div class="container-fluid">
           <div class="row">
@@ -21,84 +21,102 @@
                     />
                   </div>
                   <div class="col-md-12 col-lg-6 login-right">
-                    <%- include ('partials/messages') %>
+                    <%- include ('../partials/messages') %>
                     <div class="login-header">
-                      <h3>
-                        Client Register
-                        <a href="/register-consultant">Are you a Consultant?</a>
-                      </h3>
+                      <h3>Client Register - Continue</h3>
                     </div>
 
                     <!-- Register Form -->
                     <form
-                      action="/register"
+                      action="/register-complete"
                       method="post"
                       data-parsley-validate
                     >
+                      <input
+                        type="text"
+                        class="d-none"
+                        name="id"
+                        value="<%= user._id %>"
+                      />
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                           <div class="form-group form-focus">
                             <input
-                              id="firstName"
+                              id="phone"
                               type="text"
                               class="form-control floating"
-                              name="firstName"
+                              name="phone"
                               required
-                              value="<%= typeof(firstName) != 'undefined' ? firstName : '' %>"
                             />
-                            <label class="focus-label">First Name</label>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group form-focus">
-                            <input
-                              id="lastName"
-                              type="text"
-                              class="form-control floating"
-                              name="lastName"
-                              required
-                              value="<%= typeof(lastName) != 'undefined' ? lastName : '' %>"
-                            />
-                            <label class="focus-label">Last Name</label>
+                            <label class="focus-label">Phone Number</label>
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group form-focus">
                             <input
-                              id="email"
-                              type="email"
+                              id="company"
+                              type="text"
                               class="form-control floating"
-                              name="email"
+                              name="company"
                               required
-                              value="<%= typeof(email) != 'undefined' ? email : '' %>"
                             />
-                            <label class="focus-label">Email</label>
+                            <label class="focus-label">Company Name</label>
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group form-focus">
                             <input
-                              id="password"
+                              id="street"
                               type="text"
                               class="form-control floating"
-                              name="password"
-                              minlength="6"
+                              name="street"
                               required
                             />
-                            <label class="focus-label">Password</label>
+                            <label class="focus-label">Street</label>
                           </div>
                         </div>
-                      </div>
-                      <div class="text-right">
-                        <a class="forgot-link" href="/login"
-                          >Already have an account?</a
-                        >
+                        <div class="col-md-6">
+                          <div class="form-group form-focus">
+                            <input
+                              id="state"
+                              type="text"
+                              class="form-control floating"
+                              name="state"
+                              required
+                            />
+                            <label class="focus-label">State</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group form-focus">
+                            <input
+                              id="zip"
+                              type="text"
+                              class="form-control floating"
+                              name="zip"
+                              required
+                            />
+                            <label class="focus-label">Zip Code</label>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group form-focus">
+                            <input
+                              id="country"
+                              type="text"
+                              class="form-control floating"
+                              name="country"
+                              required
+                            />
+                            <label class="focus-label">Country</label>
+                          </div>
+                        </div>
                       </div>
                       <button
                         class="btn btn-primary btn-block btn-lg login-btn"
                         type="submit"
                       >
-                        Signup
+                        Continue
                       </button>
                       <!-- <div class="login-or">
                         <span class="or-line"></span>
@@ -126,9 +144,9 @@
           </div>
         </div>
       </div>
-      <%- include ('partials/homefooter') %>
+      <%- include ('../partials/homefooter') %>
     </div>
 
-    <%- include ('partials/commonscripts') %>
+    <%- include ('../partials/commonscripts') %>
   </body>
 </html>

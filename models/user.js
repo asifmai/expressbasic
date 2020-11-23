@@ -5,6 +5,8 @@ const userSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     company: String,
+    certification: String,
+    expertise: String,
     address: {
       street: String,
       state: String,
@@ -18,6 +20,7 @@ const userSchema = new mongoose.Schema({
   password: String,
   verified: Boolean,
   verificationCode: String,
+  forgotPasswordCode: String,
   createdAt: {
     type: Date,
     default: Date.now,

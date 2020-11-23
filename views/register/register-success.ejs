@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../partials/commonhead') %>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <%- include ('../partials/homeheader') %>
+
+      <section class="section section-search">
+        <div class="container-fluid">
+          <div class="banner-wrapper">
+            <div class="banner-header text-center">
+              <h1>You are Registered</h1>
+              <p>
+                Check your Inbox to verify your Email and continue registeration
+              </p>
+
+              <% if (env == 'development') { %>
+              <a
+                class="btn btn-primary btn-lg mt-4"
+                href="/verify-email/<%= user.verificationCode %>"
+                >Continue (Development)</a
+              >
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <%- include ('../partials/homefooter') %>
+    </div>
+
+    <%- include ('../partials/commonscripts') %>
+  </body>
+</html>

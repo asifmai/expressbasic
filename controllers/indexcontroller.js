@@ -17,9 +17,21 @@ module.exports.login_post = (req, res, next) => {
 }
 
 module.exports.client_register_get = (req, res, next) => {
-  res.render('register');
+  res.render('register/register');
 }
 
 module.exports.consultant_register_get = (req, res, next) => {
-  res.render('register-consultant');
+  res.render('register/register-consultant');
+}
+
+module.exports.dashboard_get = (req, res, next) => {
+  if (req.user.role == 'client') {
+    res.render('client/dashboard');
+  } else if (req.user.role == 'consultant') {
+    res.render('consultant/dashboard');
+  };
+}
+
+module.exports.forgot_password_get = (req, res, next) => {
+  res.render('password/forgot-password');
 }
